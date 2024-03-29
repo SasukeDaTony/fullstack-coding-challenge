@@ -1,0 +1,16 @@
+img {
+  width: 100px;
+  height: auto;
+}
+
+
+nav h4 {
+  display: flex;
+  color: #2f56a6;
+  height: 2em;
+  max-width: none;
+  font-weight: 400;
+  font-size: 1.125rem;
+  letter-spacing: -0.03rem;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}

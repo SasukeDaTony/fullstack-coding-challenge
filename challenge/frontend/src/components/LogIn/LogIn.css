@@ -1,0 +1,23 @@
+.login_container form {
+}
+
+.login_container form button:hover {
+  opacity: 65%;
+  cursor: pointer;
+}
+
+.login_container form button {
+  margin: 10px;
+  background-color: #2f56a6;
+  color: aliceblue;
+}
+
+.login_container {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-content: space-evenly;
+  padding: 20px;
+  background: linear-gradient(to right, #000428, #000046);
+  color: white;
+}
