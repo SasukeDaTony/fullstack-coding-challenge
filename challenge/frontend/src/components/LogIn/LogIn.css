@@ -4,6 +4,14 @@
   color: white;
 }
 
+.username-container button {
+  background: linear-gradient(to right, #000428, #000046);
+  &:hover {
+    opacity: 1;
+    color: gray;
+  }
+}
+
 form {
   display: flex;
   justify-content: center;
@@ -18,7 +26,7 @@ form {
   }
 }
 .login-button:hover {
-  opacity: 85%;
+  /* opacity: 85%; */
   cursor: pointer;
 }
 

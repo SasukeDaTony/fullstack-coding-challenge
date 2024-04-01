@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import "./LogIn.css";
+import { isLoggedIn } from "../../utils/utils";
 
-function Login({ setDisplayUserName, displayUserName }) {
+function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,10 +21,9 @@ function Login({ setDisplayUserName, displayUserName }) {
         username,
         password,
       });
-      console.log(response.data.token, "token successful");
       Cookies.set("token", response.data.token, { expires: 1 }); // set Token
+      setLoginError("");
       navigate("/profile"); // Redirect user upon successful login
-      setDisplayUserName(true); //display signed-in Username
     } catch (error) {
       setLoginError(
         "Failed to login. Please check your credentials and try again."
@@ -34,7 +34,6 @@ function Login({ setDisplayUserName, displayUserName }) {
   // Remove the token log out function
   const handleLogout = () => {
     Cookies.remove("token");
-    setDisplayUserName(false);
     setUsername("");
     setPassword("");
     setShowPassword(false);
@@ -47,10 +46,9 @@ function Login({ setDisplayUserName, displayUserName }) {
   }
 
   return (
-    <div className="login-container">
-      {displayUserName ? (
+    <>
+      {isLoggedIn() ? (
         <div className="username-container">
-          <h4>{username}</h4>
           <button
             className="btn btn-outline-light logout"
             onClick={handleLogout}
@@ -59,35 +57,39 @@ function Login({ setDisplayUserName, displayUserName }) {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleLogin}>
-          <label>Username:</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <label>
-            Password:{" "}
-            <i
-              className={
-                showPassword ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"
-              }
-              onClick={handleShowPassword}
-            ></i>
-          </label>
-          <input
-            type={showPassword ? "text" : "password"}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit" className="btn btn-primary btn-sm login-button">
-            Login
-          </button>
-        </form>
+        <div className="login-container">
+          <form onSubmit={handleLogin}>
+            <label>Username:</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <label>
+              Password:{" "}
+              <i
+                className={
+                  showPassword ? "fa-solid fa-eye" : "fa-solid fa-eye-slash"
+                }
+                onClick={handleShowPassword}
+              ></i>
+            </label>
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button
+              type="submit"
+              className="btn btn-primary btn-sm login-button"
+            >
+              Login
+            </button>
+          </form>
+          {loginError && <div className="log-err">{loginError}</div>}
+        </div>
       )}
-
-      {loginError && <div className="log-err">{loginError}</div>}
-    </div>
+    </>
   );
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import "./Nav.css";
 import Login from "../LogIn/LogIn";
 
-function Nav({ setDisplayUserName, displayUserName }) {
+function Nav() {
   return (
     <nav>
       <div className="nav-container">
@@ -14,10 +14,7 @@ function Nav({ setDisplayUserName, displayUserName }) {
           />
           <div className="logo-title">Welcome District Council Member</div>
         </div>
-        <Login
-          setDisplayUserName={setDisplayUserName}
-          displayUserName={displayUserName}
-        />
+        <Login />
       </div>
     </nav>
   );

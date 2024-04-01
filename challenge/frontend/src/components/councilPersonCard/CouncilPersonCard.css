@@ -1,0 +1,12 @@
+.council-person-card {
+  width: 370px;
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  &:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+  }
+}

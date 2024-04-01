@@ -5,20 +5,20 @@ import LogInPage from "./pages/LogInPage/LogInPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Footer from "./components/Footer/Footer";
 import Nav from "./components/Nav/Nav";
+import Cookies from "js-cookie";
+import { isLoggedIn } from "./utils/utils";
 
 function App() {
-  const [displayUserName, setDisplayUserName] = useState(false);
-
   return (
     <div className="main">
       <Router>
-        <Nav
-          setDisplayUserName={setDisplayUserName}
-          displayUserName={displayUserName}
-        />
+        <Nav />
         <Routes>
           <Route path="/" element={<LogInPage />} />
-          <Route path="/profile" element={<ProfilePage setDisplayUserName={setDisplayUserName} />} />
+          <Route
+            path="/profile"
+            element={<ProfilePage/>}
+          />
         </Routes>
       </Router>
       <Footer />

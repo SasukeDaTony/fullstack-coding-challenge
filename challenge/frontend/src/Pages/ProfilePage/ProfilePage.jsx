@@ -9,7 +9,7 @@ import "./ProfilePage.css";
 import CarouselComplaints from "../../components/CarouselComplaints/CarouselComplaints";
 import { districtNumberOnly, isLoggedIn } from "../../utils/utils";
 
-function Profile({ setDisplayUserName }) {
+function Profile() {
   const [userProfile, setUserProfile] = useState({});
   const [openCases, setOpenCases] = useState([]);
   const [topComplaints, setTopComplaints] = useState([]);
@@ -17,20 +17,22 @@ function Profile({ setDisplayUserName }) {
   const [allComplaints, setAllComplaints] = useState([]);
   const [constituentComplaints, setConstituentComplaints] = useState([]);
 
-  const token = Cookies.get("token");
-
   // useEffect for calling my fetches and token
   useEffect(() => {
-    fetchProfileData();
-    fetchOpenCases();
-    fetchClosedCases();
-    fetchAllComplaints();
-    fetchTopComplaints();
-    fetchConstituentComplaints();
+    const token = Cookies.get("token");
+    if (token) {
+      console.log(token, "this is my token for ProfilePage");
+      fetchProfileData(token);
+      fetchOpenCases(token);
+      fetchClosedCases(token);
+      fetchAllComplaints(token);
+      fetchTopComplaints(token);
+      fetchConstituentComplaints(token);
+    }
   }, []);
 
   // Fetches
-  const fetchClosedCases = async () => {
+  const fetchClosedCases = async (token) => {
     try {
       const response = await axios.get(
         "http://127.0.0.1:8000/api/complaints/closedCases/",
@@ -49,7 +51,7 @@ function Profile({ setDisplayUserName }) {
     }
   };
 
-  const fetchTopComplaints = async () => {
+  const fetchTopComplaints = async (token) => {
     try {
       const response = await axios.get(
         "http://127.0.0.1:8000/api/complaints/topComplaints/",
@@ -67,7 +69,7 @@ function Profile({ setDisplayUserName }) {
     }
   };
 
-  const fetchAllComplaints = async () => {
+  const fetchAllComplaints = async (token) => {
     try {
       const response = await axios.get(
         "http://127.0.0.1:8000/api/complaints/allComplaints/",
@@ -85,7 +87,7 @@ function Profile({ setDisplayUserName }) {
     }
   };
 
-  const fetchProfileData = async () => {
+  const fetchProfileData = async (token) => {
     try {
       const response = await axios.get(
         "http://127.0.0.1:8000/api/complaints/userProfile/",
@@ -103,7 +105,7 @@ function Profile({ setDisplayUserName }) {
     }
   };
 
-  const fetchConstituentComplaints = async () => {
+  const fetchConstituentComplaints = async (token) => {
     try {
       const response = await axios.get(
         "http://127.0.0.1:8000/api/complaints/constituentComplaints/",
@@ -121,7 +123,7 @@ function Profile({ setDisplayUserName }) {
     }
   };
 
-  const fetchOpenCases = async () => {
+  const fetchOpenCases = async (token) => {
     try {
       const response = await axios.get(
         "http://127.0.0.1:8000/api/complaints/openCases/",

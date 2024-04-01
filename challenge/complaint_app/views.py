@@ -1,5 +1,6 @@
 from django.db.models import Count
 from rest_framework import viewsets
+from rest_framework.permissions import AllowAny
 from .models import UserProfile, Complaint
 from .serializers import (
     UserSerializer,
@@ -96,3 +97,13 @@ class ContituentComplaintsViewSet(viewsets.ModelViewSet):
         )
         serializer = self.get_serializer(constituent_complaints, many=True)
         return Response(serializer.data)
+
+
+class AllUsersViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
+
+    def get_permissions(self):
+        if self.request.method == "GET":
+            return [AllowAny()]
+        return super().get_permissions()

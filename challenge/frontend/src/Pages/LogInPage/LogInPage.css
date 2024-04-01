@@ -1,12 +1,16 @@
-.login-page-container {
-  width: 1400px;
-  height: 1000px;
-  margin-bottom: 10px;
-  background-image: url("https://council.nyc.gov/wp-content/uploads/2023/03/default-feat-1.png");
+.login-page {
+  width: 1150px;
+  margin: 0 auto;
 }
 
-.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.city-council-members {
+  margin-top: 20px;
+}
+
+.city-council-members-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 30px 0;
 }

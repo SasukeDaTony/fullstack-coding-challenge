@@ -64,3 +64,6 @@ class ComplaintSerializer(serializers.ModelSerializer):
             "community_board",
             "closedate",
         )
+
+
+
