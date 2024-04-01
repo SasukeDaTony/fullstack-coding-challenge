@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import LogInPage from "./pages/LogInPage/LogInPage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import Footer from "./components/Footer/Footer";
-import Nav from "./components/Nav/Nav";
-import Cookies from "js-cookie";
-import { isLoggedIn } from "./utils/utils";
+import LogInPage from "./Pages/LogInPage/LogInPage";
+import ProfilePage from "./Pages/ProfilePage/ProfilePage";
+import Footer from "./components/footer/Footer";
+import Nav from "./components/nav/Nav";
 
 function App() {
   return (

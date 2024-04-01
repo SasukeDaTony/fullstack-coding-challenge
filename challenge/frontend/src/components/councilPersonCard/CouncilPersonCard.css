@@ -1,12 +1,49 @@
 .council-person-card {
-  width: 370px;
+  background: linear-gradient(to right, #000428, #000046);
+  width: 350px;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   padding: 15px;
+  margin: 15px;
   border-radius: 10px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2px rgba(67, 69, 199, 0.3);
   &:hover {
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 15px rgb(38, 78, 189);
     cursor: pointer;
   }
+}
+
+.thumbnail-card {
+  border-radius: 20px;
+  width: 125px;
+  height: 150px;
+}
+
+
+
+.blue {
+  color: dodgerblue;
+}
+.yellow {
+  color: rgb(203, 203, 3);
+}
+
+.green {
+  color: rgb(26, 199, 26);
+}
+
+.red {
+  color: red;
+}
+
+.council-person-card__info b {
+  color: lemonchiffon;
+}
+
+.borough {
+  padding-top: 3px;
+}
+
+.district {
+  color: rgba(127, 255, 212, 0.564);
 }

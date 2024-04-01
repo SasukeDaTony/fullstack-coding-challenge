@@ -1,6 +1,6 @@
 import React from "react";
 import "./Nav.css";
-import Login from "../LogIn/LogIn";
+import Login from "../logIn/LogIn";
 
 function Nav() {
   return (

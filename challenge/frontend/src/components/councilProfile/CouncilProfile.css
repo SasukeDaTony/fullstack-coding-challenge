@@ -3,6 +3,10 @@
   width: 800px;
 }
 
+.card-body {
+  text-align: center;
+}
+
 .user-info {
   color: aliceblue;
   display: flex;
@@ -22,9 +26,9 @@
 }
 
 .thumbnail {
-  border-radius: 5px;
+  border-radius: 15px;
   width: 15rem;
-  height: 20rem;
+  height: 16rem;
 }
 
 .user-title {

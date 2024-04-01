@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
 
-import CouncilProfile from "../../components/counsilProfile/CouncilProfile";
-import CouncilComplaintData from "../../components/councilComplaintData/CouncilComplaintData";
-import ComplaintTable from "../../components/ComplaintTable/ComplaintTable";
+import CouncilProfile from "../../components/councilProfile/CouncilProfile";
+import ComplaintWidget from "../../components/complaintWidget/ComplaintWidget";
+import ComplaintTable from "../../components/complaintTable/ComplaintTable";
 import "./ProfilePage.css";
-import CarouselComplaints from "../../components/CarouselComplaints/CarouselComplaints";
-import { districtNumberOnly, isLoggedIn } from "../../utils/utils";
+import { isLoggedIn } from "../../utils/utils";
 
 function Profile() {
   const [userProfile, setUserProfile] = useState({});
@@ -42,9 +41,7 @@ function Profile() {
           },
         }
       );
-      console.log(response.data, "THIS IS MY RESPONSE USEEFFECT");
       setClosedCases(response.data); // Assuming the data is the object you want
-      console.log("closed cases in fetch", closedCases);
     } catch (error) {
       console.error("Failed to fetch Closed cases", error);
       // Handle error (e.g., by setting an error state or logging out the user)
@@ -147,7 +144,7 @@ function Profile() {
         <div className="profile-container">
           <div className="profile-container__top">
             <CouncilProfile userProfile={userProfile} />
-            <CouncilComplaintData
+            <ComplaintWidget
               userProfile={userProfile}
               openCases={openCases}
               topComplaints={topComplaints}

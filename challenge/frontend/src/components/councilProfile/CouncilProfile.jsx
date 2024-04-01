@@ -6,9 +6,9 @@ const CouncilProfile = ({ userProfile }) => {
   return (
     <div className="card user-container-card">
       <div className="card-body">
-        <h1 className="card-title user-title">
+        <h3 className="card-title user-title">
           Welcome {userProfile.full_name}
-        </h1>
+        </h3>
         <div className="user-info">
           <img
             className="card-img-top thumbnail"

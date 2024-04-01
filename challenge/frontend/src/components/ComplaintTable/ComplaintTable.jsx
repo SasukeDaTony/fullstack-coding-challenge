@@ -29,7 +29,7 @@ function ComplaintTable({
             ? "Show All Complaints"
             : "Complaints by My Constituents"}
         </button>
-        <table className="table table-info table-bordered table-striped-columns">
+        <table className="table table-info table-bordered table-striped-columns table-hover">
           <thead>
             <tr className="table-warning">
               <th scope="col">From Constituent In</th>
@@ -44,7 +44,7 @@ function ComplaintTable({
               <th scope="col">Community Board</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             {(onlyConstituents ? constituentComplaints : allComplaints).map(
               (complaint) => (
                 <tr key={complaint.unique_key}>

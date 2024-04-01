@@ -1,8 +1,11 @@
 .complaint-widget {
+  text-align: center;
   width: 100%;
-  border: #255bc0 solid 2px;
   margin-left: 10px;
   padding: 10px;
+  background-color: #22427e;
+  border-radius: 25px;
+  color: lemonchiffon;
 }
 
 .complaint-widget h3 {
@@ -11,3 +14,4 @@
   margin-bottom: 0;
   padding-bottom: 0;
 }
+

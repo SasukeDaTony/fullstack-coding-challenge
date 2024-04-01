@@ -1,14 +1,12 @@
-import React from "react";
+import React from 'react'
 
 function DistrictMembersPage() {
-
-
-
-
-
-
-  
-  return <div></div>;
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
-export default DistrictMembersPage;
+export default DistrictMembersPage
+
