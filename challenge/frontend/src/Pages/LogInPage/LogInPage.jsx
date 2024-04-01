@@ -1,11 +1,10 @@
 import React from "react";
-import Login from "../../components/LogIn/LogIn";
-import Nav from "../../components/Nav/Nav";
+import "./LogInPage.css";
+
 export default function LogInPage() {
   return (
     <div className="login-page">
-     
-      <Login />
+      <div className="login-page-container"></div>
     </div>
   );
 }

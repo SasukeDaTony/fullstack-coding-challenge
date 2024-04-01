@@ -1,1 +1,19 @@
+.profile-container__top {
+  display: flex;
+  gap: 30px;
+}
 
+.table {
+  padding-top: 50px;
+}
+
+.profile-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.unauthorized-login {
+  margin: 120px auto;
+  width: 800px;
+  text-align: center;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ComplaintTable.css";
 
 function ComplaintTable({
   openCases,
@@ -10,42 +11,43 @@ function ComplaintTable({
   // toggle between showing all complaints or constituent only complaints
   const [onlyConstituents, setOnlyConstituents] = useState(false);
 
-  // State to keep track of constituent complaints
+  // function for State control to keep track of constituent complaints
   const filterConstituentComplaints = () => {
     setOnlyConstituents(!onlyConstituents);
   };
 
   return (
     <div>
-      <div className="">
-        <button onClick={filterConstituentComplaints}>
+      <div className="table-btn-container">
+        <button
+          onClick={filterConstituentComplaints}
+          className="btn btn-outline-info"
+          data-bs-toggle="button"
+          aria-pressed="true"
+        >
           {onlyConstituents
             ? "Show All Complaints"
             : "Complaints by My Constituents"}
         </button>
-        <table>
+        <table className="table table-info table-bordered table-striped-columns">
           <thead>
-            <tr>
-              <th>{"Complaint Against"}</th>
-              <th>From Constituent In</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Open Date</th>
-              <th>Status</th>
-              <th>Close Date</th>
-              <th>Borough</th>
-              <th>Zip Code</th>
-              <th>City</th>
-              <th>Community Board</th>
+            <tr className="table-warning">
+              <th scope="col">From Constituent In</th>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+              <th scope="col">Open Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Close Date</th>
+              <th scope="col">Borough</th>
+              <th scope="col">Zip Code</th>
+              <th scope="col">City</th>
+              <th scope="col">Community Board</th>
             </tr>
           </thead>
           <tbody>
             {(onlyConstituents ? constituentComplaints : allComplaints).map(
               (complaint) => (
                 <tr key={complaint.unique_key}>
-                  <td>
-                    {complaint.account ? complaint.account : "Unavailable"}
-                  </td>
                   <td>
                     {complaint.council_dist && complaint.council_dist !== "NYCC"
                       ? complaint.council_dist

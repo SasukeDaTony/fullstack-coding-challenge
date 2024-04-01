@@ -1,0 +1,12 @@
+.login-page-container {
+  width: 1400px;
+  height: 1000px;
+  margin-bottom: 10px;
+  background-image: url("https://council.nyc.gov/wp-content/uploads/2023/03/default-feat-1.png");
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

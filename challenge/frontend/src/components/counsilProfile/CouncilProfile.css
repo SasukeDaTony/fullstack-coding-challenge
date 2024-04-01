@@ -1,0 +1,36 @@
+.user-container-card {
+  background-color: #22427e;
+  width: 800px;
+}
+
+.user-info {
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-info-container {
+  padding: 40px;
+}
+
+.party {
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+  margin-right: 0px;
+  padding: 5px;
+}
+
+.thumbnail {
+  border-radius: 5px;
+  width: 15rem;
+  height: 20rem;
+}
+
+.user-title {
+  color: aliceblue;
+}
+
+.card-text {
+  text-align: center;
+}

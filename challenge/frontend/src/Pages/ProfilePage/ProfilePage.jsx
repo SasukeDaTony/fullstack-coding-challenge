@@ -1,32 +1,23 @@
 import React, { useEffect, useState } from "react";
-import "./ProfilePage.css";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
-import axios from "axios"; // Assuming you're using axios for HTTP requests
-import ComplaintTable from "../../components/ComplaintTable/ComplaintTable";
+import axios from "axios";
 
-function Profile() {
-  const [userProfile, setUserProfile] = useState([]);
+import CouncilProfile from "../../components/counsilProfile/CouncilProfile";
+import CouncilComplaintData from "../../components/councilComplaintData/CouncilComplaintData";
+import ComplaintTable from "../../components/ComplaintTable/ComplaintTable";
+import "./ProfilePage.css";
+import CarouselComplaints from "../../components/CarouselComplaints/CarouselComplaints";
+import { districtNumberOnly, isLoggedIn } from "../../utils/utils";
+
+function Profile({ setDisplayUserName }) {
+  const [userProfile, setUserProfile] = useState({});
   const [openCases, setOpenCases] = useState([]);
   const [topComplaints, setTopComplaints] = useState([]);
   const [closedCases, setClosedCases] = useState([]);
   const [allComplaints, setAllComplaints] = useState([]);
   const [constituentComplaints, setConstituentComplaints] = useState([]);
 
-  const navigate = useNavigate();
   const token = Cookies.get("token");
-
-  // Remove the token log out function
-  const handleLogout = () => {
-    Cookies.remove("token");
-    navigate("/");
-  };
-
-  // Function to check if the user is logged in
-  const isLoggedIn = () => {
-    const token = Cookies.get("token");
-    return !!token;
-  };
 
   // useEffect for calling my fetches and token
   useEffect(() => {
@@ -38,6 +29,7 @@ function Profile() {
     fetchConstituentComplaints();
   }, []);
 
+  // Fetches
   const fetchClosedCases = async () => {
     try {
       const response = await axios.get(
@@ -67,9 +59,8 @@ function Profile() {
           },
         }
       );
-      console.log(response.data, "THIS IS Top COmplaints");
+
       setTopComplaints(response.data);
-      console.log("top Complaints in fetch", topComplaints);
     } catch (error) {
       console.error("Failed to fetch top Complaints", error);
       // Handle error (e.g., by setting an error state or logging out the user)
@@ -86,9 +77,8 @@ function Profile() {
           },
         }
       );
-      console.log(response.data, "THIS IS MY AllComplaints");
+
       setAllComplaints(response.data); // Assuming the data is the object you want
-      console.log("all complaints in fetch", allComplaints);
     } catch (error) {
       console.error("Failed to fetch ALL complaints", error);
       // Handle error (e.g., by setting an error state or logging out the user)
@@ -105,9 +95,8 @@ function Profile() {
           },
         }
       );
-      console.log(response.data, " this is userProfile data");
+
       setUserProfile(response.data); // Assuming the data is the object you want
-      console.log("User in fetch", userProfile);
     } catch (error) {
       console.error("Failed to fetch User", error);
       // Handle error (e.g., by setting an error state or logging out the user)
@@ -124,12 +113,8 @@ function Profile() {
           },
         }
       );
-      console.log(response.data, " this is ALL ONLY CONSTITUENTS");
+
       setConstituentComplaints(response.data); // Assuming the data is the object you want
-      console.log(
-        "constituent only complaints in fetch",
-        constituentComplaints
-      );
     } catch (error) {
       console.error("Failed to fetch Constituent only cases", error);
       // Handle error (e.g., by setting an error state or logging out the user)
@@ -146,9 +131,8 @@ function Profile() {
           },
         }
       );
-      console.log(response.data, " this is ALL OPEN Cases");
+
       setOpenCases(response.data); // Assuming the data is the object you want
-      console.log("open cases in fetch", openCases);
     } catch (error) {
       console.error("Failed to fetch Open cases", error);
       // Handle error (e.g., by setting an error state or logging out the user)
@@ -158,18 +142,18 @@ function Profile() {
   return (
     <>
       {isLoggedIn() ? (
-        <div className="profile_container">
-          <div className="log_in_confirm">
-            <h1>You Logged IN</h1>
-            <img
-              src="https://crickethof.org/wp-content/uploads/2021/07/MAISEL-300x300.png"
-              alt="leo"
+        <div className="profile-container">
+          <div className="profile-container__top">
+            <CouncilProfile userProfile={userProfile} />
+            <CouncilComplaintData
+              userProfile={userProfile}
+              openCases={openCases}
+              topComplaints={topComplaints}
+              closedCases={closedCases}
             />
-            <button onClick={handleLogout}>Logout</button>
           </div>
-
+          {/* <CarouselComplaints allComplaints={allComplaints} />={" "} */}
           <div className="table">
-            <h2>Below is Dummy Table for testing</h2>
             <ComplaintTable
               openCases={openCases}
               topComplaints={topComplaints}
@@ -180,16 +164,13 @@ function Profile() {
           </div>
         </div>
       ) : (
-        navigate("/")
+        <div className="unauthorized-login">
+          <h2>Unauthorized Login</h2>
+        </div>
       )}
     </>
   );
 }
 export default Profile;
 
-// make your html table
-// make logic to handle null data fields (council_dist, complaint_type, borough)
-// make sure your data is being filtered correctly (with tenzing)
-// CSS convention
-// finish making the other GET requests once logged in
-// create button that filters Html table for complaints where account === council_dist *BONUS REACT SIDE README.MD
+// make logic to handle null data fields (council_dist, complaint_type, borough) Maybe add (emoji or icon)
