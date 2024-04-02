@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ComplaintTable.css";
-
+import { complaintIcons } from "../../utils/utils";
 function ComplaintTable({
   openCases,
   topComplaints,
@@ -44,7 +44,7 @@ function ComplaintTable({
               <th scope="col">Community Board</th>
             </tr>
           </thead>
-          <tbody >
+          <tbody>
             {(onlyConstituents ? constituentComplaints : allComplaints).map(
               (complaint) => (
                 <tr key={complaint.unique_key}>
@@ -54,9 +54,24 @@ function ComplaintTable({
                       : "Unavailable"}
                   </td>
                   <td>
-                    {complaint.complaint_type
-                      ? complaint.complaint_type
-                      : "Unavailable"}
+                    <div className="icon-container">
+                      {complaint.complaint_type
+                        ? `${complaint.complaint_type}`
+                        : "Unavailable"}
+                      {complaint.complaint_type ? (
+                        <img
+                          src={complaintIcons[complaint.complaint_type]}
+                          className="complaint-icon"
+                          alt={complaint.complaint_type}
+                        />
+                      ) : (
+                        <img
+                          src={complaintIcons["Unavailable"]}
+                          className="complaint-icon"
+                          alt="Unavailable"
+                        />
+                      )}
+                    </div>
                   </td>
                   <td>
                     {complaint.descriptor

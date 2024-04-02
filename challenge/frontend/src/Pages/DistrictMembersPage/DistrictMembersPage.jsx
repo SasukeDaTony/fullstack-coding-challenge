@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import CouncilProfile from "../../components/councilProfile/CouncilProfile";
+import "./DistrictMembersPage.css";
 
 function DistrictMembersPage() {
   const [allUsers, setAllUsers] = useState([]);
@@ -28,10 +29,20 @@ function DistrictMembersPage() {
     (user) => user.district.slice(4) === userDistrict
   )[0];
 
+  console.log(filteredUser);
+
+  if (allUsers.length === 0) {
+    return <div></div>;
+  }
 
   return (
-    <div>
-      <CouncilProfile userProfile={filteredUser} />
+    <div className="member">
+      <h3>
+        For <span className="red">Complaints</span> Information Please Log In...
+      </h3>
+      <div id="district-member__container">
+        <CouncilProfile userProfile={filteredUser} />
+      </div>
     </div>
   );
 }

@@ -57,6 +57,10 @@ a {
   font-weight: 400;
 }
 
+a:hover {
+  opacity: 65%;
+}
+
 a:link,
 a:visited,
 a:hover,
@@ -101,7 +105,6 @@ ul {
 .accessibility {
   width: 125px;
   height: auto;
-  
 }
 
 .p-accessibility {

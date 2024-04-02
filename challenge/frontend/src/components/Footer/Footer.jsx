@@ -33,7 +33,10 @@ function Footer() {
               You can reach us via social media, email, paper mail, or at your
               district office. For issues specific to a neighborhood, it's best
               to{" "}
-              <a className="bold-link" href="/districts/">
+              <a
+                className="bold-link"
+                href="https://council.nyc.gov/districts/"
+              >
                 contact the Council Member representing that community.
               </a>
             </p>
@@ -97,37 +100,49 @@ function Footer() {
             <h3>About</h3>
             <ul>
               <li>
-                <a className="bold-link" href="/events/">
+                <a className="bold-link" href="https://council.nyc.gov/events">
                   Events
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/about/">
+                <a className="bold-link" href="https://council.nyc.gov/about">
                   What we do
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/caucuses/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/caucuses/"
+                >
                   Caucuses
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/visit-the-council/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/visit-the-council/"
+                >
                   Visit the Council
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/district-info/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/district-info/"
+                >
                   District Info
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/jobs/">
+                <a className="bold-link" href="https://council.nyc.gov/jobs/">
                   Job Opportunities
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/get-updates/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/get-updates/"
+                >
                   Subcribe for Updates
                 </a>
               </li>
@@ -137,12 +152,18 @@ function Footer() {
             <h3 className="widget-title">Legislation</h3>
             <ul>
               <li>
-                <a className="bold-link" href="/legislation/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/legislation/"
+                >
                   Our Legislative Process
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/testify/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/testify/"
+                >
                   Register to Testify
                 </a>
               </li>
@@ -163,12 +184,15 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/legislation/api/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/legislation/api/"
+                >
                   Legislative API
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/data/">
+                <a className="bold-link" href="https://council.nyc.gov/data/">
                   Data
                 </a>
               </li>
@@ -178,27 +202,39 @@ function Footer() {
             <h3 className="column-container">Press &amp; News</h3>
             <ul>
               <li>
-                <a className="bold-link" href="/foil-request/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/foil-request/"
+                >
                   Submit a “Freedom of Information Law” (FOIL) Request
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/press/">
+                <a className="bold-link" href="https://council.nyc.gov/press/">
                   Press Releases
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/press/press-photos/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/press/press-photos/"
+                >
                   Photos
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/past-featured-content">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/past-featured-content"
+                >
                   Past Featured Content
                 </a>
               </li>
               <li>
-                <a className="bold-link" href="/news/tag/video/">
+                <a
+                  className="bold-link"
+                  href="https://council.nyc.gov/news/tag/video/"
+                >
                   Videos
                 </a>
               </li>

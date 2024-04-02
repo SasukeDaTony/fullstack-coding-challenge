@@ -50,7 +50,13 @@ function Login() {
       {isLoggedIn() ? (
         <div className="username-container">
           <button
-            className="btn btn-outline-light logout"
+            className="btn btn-outline-success"
+            onClick={() => navigate("/profile")}
+          >
+            My Profile
+          </button>
+          <button
+            className="btn btn-outline-warning logout"
             onClick={handleLogout}
           >
             Logout

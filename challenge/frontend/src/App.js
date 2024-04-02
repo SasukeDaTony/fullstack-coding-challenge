@@ -6,6 +6,7 @@ import ProfilePage from "./Pages/ProfilePage/ProfilePage";
 import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
 import DistrictMembersPage from "./Pages/DistrictMembersPage/DistrictMembersPage";
+import FourOFour from "./Pages/FourOFour/FourOFour";
 
 
 function App() {
@@ -16,11 +17,12 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<LogInPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route
-            path="/profile"
-            element={<ProfilePage/>}
+            path="/profile/:userDistrict"
+            element={<DistrictMembersPage />}
           />
-          <Route path="/profile/:userDistrict" element={<DistrictMembersPage />} />
+          <Route path="*" element={<FourOFour />} />
         </Routes>
       </Router>
       <Footer />

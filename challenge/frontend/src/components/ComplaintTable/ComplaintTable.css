@@ -5,3 +5,14 @@
 .table-btn-container button {
   margin-bottom: 10px;
 }
+
+.complaint-icon {
+  border-radius: 15px;
+  width: 75px;
+  height: 50px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,12 +1,15 @@
 import React from "react";
 import "./Nav.css";
 import Login from "../logIn/LogIn";
+import { useNavigate } from "react-router-dom";
 
 function Nav() {
+  const navigate = useNavigate();
+
   return (
     <nav>
       <div className="nav-container">
-        <div className="greeting">
+        <div className="greeting" onClick={() => navigate("/")}>
           <img
             className="logo"
             alt="NYC Council Seal"

@@ -1,11 +1,8 @@
 import React from "react";
 import "./ComplaintWidget.css";
+import { complaintIcons } from "../../utils/utils";
 
-const ComplaintWidget = ({
-  topComplaints,
-  openCases,
-  closedCases,
-}) => {
+const ComplaintWidget = ({ topComplaints, openCases, closedCases }) => {
   const topComplaint = topComplaints.length ? topComplaints[0] : {};
 
   return (
@@ -14,7 +11,15 @@ const ComplaintWidget = ({
         <span className="red">Complaints </span>
       </h3>
       <hr />
-      <h6> <span className="red">Top Complaint</span>: {topComplaint.complaint_type}</h6>
+      <h6>
+        {" "}
+        <span className="red">Top Complaint</span>:{" "}
+        {topComplaint.complaint_type}
+        <img className="top-complaint-icon"
+          src={complaintIcons[topComplaint.complaint_type]}
+          alt={topComplaint.complaint_type}
+        />
+      </h6>
       <h6>
         Complaint Was Made: <span className="red">{topComplaint.total}X </span>
         times
