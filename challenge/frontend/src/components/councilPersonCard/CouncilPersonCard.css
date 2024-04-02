@@ -47,3 +47,33 @@
 .district {
   color: rgba(127, 255, 212, 0.564);
 }
+
+
+@media (max-width: 480px) {
+  .council-person-card {
+    flex-direction: column;
+    width: 90%; 
+    margin: 10px auto; 
+    padding: 10px;
+  }
+
+  .thumbnail-card {
+    width: 100px;
+    height: 120px;
+    margin: 0 auto; 
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .council-person-card {
+    width: 80%; 
+    flex-direction: row; 
+    padding: 15px;
+    margin: 15px auto; 
+  }
+
+  .thumbnail-card {
+    width: 110px;
+    height: 140px;
+  }
+}

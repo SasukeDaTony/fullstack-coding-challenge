@@ -21,3 +21,70 @@
   height: 200px;
   width: 200px;
 }
+
+
+@media (max-width: 575px) {
+  .complaint-widget {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .complaint-widget h3, .complaint-widget h6 {
+    font-size: 14px;
+  }
+
+  .top-complaint-icon {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .complaint-widget {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .complaint-widget h3, .complaint-widget h6 {
+    font-size: 16px;
+  }
+
+  .top-complaint-icon {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .complaint-widget {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .complaint-widget h3, .complaint-widget h6 {
+    font-size: 20px;
+  }
+
+  .top-complaint-icon {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .complaint-widget {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .complaint-widget h3, .complaint-widget h6 {
+    font-size: 18px;
+  }
+
+  .top-complaint-icon {
+    height: 180px;
+    width: 180px;
+  }
+}

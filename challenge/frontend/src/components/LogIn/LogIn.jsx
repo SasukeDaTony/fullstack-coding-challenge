@@ -50,6 +50,13 @@ function Login() {
       {isLoggedIn() ? (
         <div className="username-container">
           <button
+            className="btn btn-outline-primary"
+            onClick={() => navigate("/")}
+          >
+            Council Members
+          </button>
+
+          <button
             className="btn btn-outline-success"
             onClick={() => navigate("/profile")}
           >

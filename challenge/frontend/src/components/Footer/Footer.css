@@ -120,3 +120,21 @@ ul {
   margin-right: auto;
   margin-left: auto;
 }
+
+@media (max-width: 576px) {
+  .about-container,
+  .media-accessibility {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  li {
+    font-size: 0.9rem;
+  }
+}

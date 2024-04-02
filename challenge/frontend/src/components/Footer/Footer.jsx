@@ -8,7 +8,7 @@ function Footer() {
       <div className="row">
         <div className="columns-container">
           <div className="widget-container">
-            <h3 className="widget-title">Visit the Council</h3>
+            <h3>Visit the Council</h3>
             <p>
               We're located at{" "}
               <a
@@ -149,7 +149,7 @@ function Footer() {
             </ul>
           </div>
           <div className="column-container">
-            <h3 className="widget-title">Legislation</h3>
+            <h3>Legislation</h3>
             <ul>
               <li>
                 <a
@@ -243,8 +243,8 @@ function Footer() {
         </div>
         <div className="media-accessibility">
           <div className="media-container">
-            <div className="widget footer-widget">
-              <h3 className="widget-title">Media Inquiries</h3>
+            <div>
+              <h3>Media Inquiries</h3>
               <p>
                 For media inquiries, please contact{" "}
                 <a className="bold-link" href="mailto:press@council.nyc.gov">
@@ -254,8 +254,8 @@ function Footer() {
             </div>
           </div>
           <div className="accessibility-container">
-            <div className="widget footer-widget">
-              <h3 className="widget-title">Accessibility</h3>
+            <div>
+              <h3>Accessibility</h3>
               <p className="p-accessibility">
                 <a
                   className="bold-link"

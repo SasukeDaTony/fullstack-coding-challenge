@@ -17,3 +17,25 @@
   width: 800px;
   text-align: center;
 }
+
+@media (max-width: 576px) {
+  .profile-container,
+  .unauthorized-login {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .profile-container__top {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 1024px) {
+  .profile-container,
+  .unauthorized-login {
+    width: 90%;
+  }
+  .profile-container__top {
+    gap: 20px;
+  }
+}

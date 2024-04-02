@@ -37,3 +37,23 @@ form {
   align-items: center;
   gap: 10px;
 }
+
+@media (max-width: 576px) {
+  .login-container {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .login-button,
+  .username-input,
+  .password-input {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+}

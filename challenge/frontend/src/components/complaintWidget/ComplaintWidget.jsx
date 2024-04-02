@@ -3,6 +3,8 @@ import "./ComplaintWidget.css";
 import { complaintIcons } from "../../utils/utils";
 
 const ComplaintWidget = ({ topComplaints, openCases, closedCases }) => {
+
+  
   const topComplaint = topComplaints.length ? topComplaints[0] : {};
 
   return (
@@ -28,7 +30,7 @@ const ComplaintWidget = ({ topComplaints, openCases, closedCases }) => {
         Current Open Cases:{" "}
         {openCases.length <= 5 ? (
           <span className="green">{openCases.length} </span>
-        ) : openCases.length >= 5 ? (
+        ) : openCases.length <= 10 ? (
           <span className="yellow"> {openCases.length} </span>
         ) : (
           <span className="red">{openCases.length}</span>

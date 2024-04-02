@@ -9,7 +9,7 @@ export default function ComplaintTable({
   const [onlyConstituents, setOnlyConstituents] = useState(false);
 
   // function for State control to keep track of constituent complaints
-  const filterConstituentComplaints = () => {
+  const toggleConstituentComplaints = () => {
     setOnlyConstituents(!onlyConstituents);
   };
 
@@ -17,7 +17,7 @@ export default function ComplaintTable({
     <div>
       <div className="table-btn-container">
         <button
-          onClick={filterConstituentComplaints}
+          onClick={toggleConstituentComplaints}
           className="btn btn-outline-info"
           data-bs-toggle="button"
           aria-pressed="true"

@@ -36,3 +36,16 @@ nav {
   color: aqua;
   cursor: pointer;
 }
+
+
+@media (max-width: 576px) {
+  .nav-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .logo {
+    width: 40px; 
+    height: 40px;
+  }
+}

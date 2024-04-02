@@ -38,3 +38,32 @@
 .card-text {
   text-align: center;
 }
+
+@media (max-width: 576px) {
+  .user-container-card {
+    width: 100%; /* Use full width on smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .thumbnail {
+    width: 10rem; /* Adjust image size */
+    height: 11rem;
+  }
+
+  .user-info-container {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .user-container-card {
+    width: 90%;
+  }
+}
+
+/* Desktops */
+@media (min-width: 769px) {
+  .user-container-card {
+    width: 800px;
+  }
+}

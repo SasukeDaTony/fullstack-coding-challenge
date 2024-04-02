@@ -3,7 +3,9 @@ import React from "react";
 import "./CouncilPersonCard.css";
 import { useNavigate } from "react-router-dom";
 export default function CouncilPersonCard({ userProfile }) {
+  
   const navigate = useNavigate();
+
   return (
     <div
       className="council-person-card"

@@ -16,3 +16,14 @@
   display: flex;
   justify-content: space-around;
 }
+
+
+@media (max-width: 576px) {
+  .complaint-icon {
+    width: 50px; 
+    height: 30px;
+  }
+  .icon-container {
+    flex-direction: column; 
+  }
+}
