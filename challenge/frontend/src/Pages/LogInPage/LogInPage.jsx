@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 import "./LogInPage.css";
 import { sortDistrictMembers } from "../../utils/utils";
 import CouncilPersonCard from "../../components/councilPersonCard/CouncilPersonCard";
@@ -17,10 +18,9 @@ export default function LogInPage() {
       const response = await axios.get(
         "http://127.0.0.1:8000/api/complaints/allUsers"
       );
-      setAllUsers(response.data); // Assuming the data is the object you want
+      setAllUsers(response.data);
     } catch (error) {
       console.error("Failed to fetch all Users", error);
-      // Handle error (e.g., by setting an error state or logging out the user)
     }
   };
 

@@ -37,14 +37,14 @@ function Profile() {
         "http://127.0.0.1:8000/api/complaints/closedCases/",
         {
           headers: {
-            Authorization: `Token ${token}`, // Adjust according to how your API expects the token
+            Authorization: `Token ${token}`, 
           },
         }
       );
-      setClosedCases(response.data); // Assuming the data is the object you want
+      setClosedCases(response.data); 
     } catch (error) {
       console.error("Failed to fetch Closed cases", error);
-      // Handle error (e.g., by setting an error state or logging out the user)
+     
     }
   };
 
@@ -54,7 +54,7 @@ function Profile() {
         "http://127.0.0.1:8000/api/complaints/topComplaints/",
         {
           headers: {
-            Authorization: `Token ${token}`, // Adjust according to how your API expects the token
+            Authorization: `Token ${token}`, 
           },
         }
       );
@@ -62,7 +62,7 @@ function Profile() {
       setTopComplaints(response.data);
     } catch (error) {
       console.error("Failed to fetch top Complaints", error);
-      // Handle error (e.g., by setting an error state or logging out the user)
+     
     }
   };
 
@@ -72,15 +72,14 @@ function Profile() {
         "http://127.0.0.1:8000/api/complaints/allComplaints/",
         {
           headers: {
-            Authorization: `Token ${token}`, // Adjust according to how your API expects the token
+            Authorization: `Token ${token}`, 
           },
         }
       );
 
-      setAllComplaints(response.data); // Assuming the data is the object you want
+      setAllComplaints(response.data); 
     } catch (error) {
       console.error("Failed to fetch ALL complaints", error);
-      // Handle error (e.g., by setting an error state or logging out the user)
     }
   };
 
@@ -90,15 +89,14 @@ function Profile() {
         "http://127.0.0.1:8000/api/complaints/userProfile/",
         {
           headers: {
-            Authorization: `Token ${token}`, // Adjust according to how your API expects the token
+            Authorization: `Token ${token}`,
           },
         }
       );
 
-      setUserProfile(response.data); // Assuming the data is the object you want
+      setUserProfile(response.data); 
     } catch (error) {
       console.error("Failed to fetch User", error);
-      // Handle error (e.g., by setting an error state or logging out the user)
     }
   };
 
@@ -108,15 +106,14 @@ function Profile() {
         "http://127.0.0.1:8000/api/complaints/constituentComplaints/",
         {
           headers: {
-            Authorization: `Token ${token}`, // Adjust according to how your API expects the token
+            Authorization: `Token ${token}`,
           },
         }
       );
 
-      setConstituentComplaints(response.data); // Assuming the data is the object you want
+      setConstituentComplaints(response.data); 
     } catch (error) {
       console.error("Failed to fetch Constituent only cases", error);
-      // Handle error (e.g., by setting an error state or logging out the user)
     }
   };
 
@@ -126,15 +123,14 @@ function Profile() {
         "http://127.0.0.1:8000/api/complaints/openCases/",
         {
           headers: {
-            Authorization: `Token ${token}`, // Adjust according to how your API expects the token
+            Authorization: `Token ${token}`,
           },
         }
       );
 
-      setOpenCases(response.data); // Assuming the data is the object you want
+      setOpenCases(response.data); 
     } catch (error) {
       console.error("Failed to fetch Open cases", error);
-      // Handle error (e.g., by setting an error state or logging out the user)
     }
   };
 
@@ -151,7 +147,6 @@ function Profile() {
               closedCases={closedCases}
             />
           </div>
-          {/* <CarouselComplaints allComplaints={allComplaints} />={" "} */}
           <div className="table">
             <ComplaintTable
               openCases={openCases}
