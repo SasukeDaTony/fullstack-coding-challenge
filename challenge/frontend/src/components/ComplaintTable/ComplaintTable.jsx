@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import "./ComplaintTable.css";
 import { complaintIcons } from "../../utils/utils";
-function ComplaintTable({
-  openCases,
-  topComplaints,
-  closedCases,
+export default function ComplaintTable({
   allComplaints,
   constituentComplaints,
 }) {
@@ -102,5 +99,3 @@ function ComplaintTable({
     </div>
   );
 }
-
-export default ComplaintTable;

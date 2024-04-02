@@ -4,7 +4,7 @@ import axios from "axios";
 
 import CouncilProfile from "../../components/councilProfile/CouncilProfile";
 import ComplaintWidget from "../../components/complaintWidget/ComplaintWidget";
-import ComplaintTable from "../../components/complaintTable/ComplaintTable";
+import ComplaintTable from "../../components/ComplaintTable/ComplaintTable";
 import "./ProfilePage.css";
 import { isLoggedIn } from "../../utils/utils";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Nav.css";
-import Login from "../logIn/LogIn";
+import Login from "../LogIn/LogIn";
 import { useNavigate } from "react-router-dom";
 
 function Nav() {
