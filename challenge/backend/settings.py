@@ -26,7 +26,7 @@ SECRET_KEY = "#m8p(q=10bq+kl#!huob(2$w4gp#&b&hv3d=$%ma+c)8+4syo%"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://fullstack-coding-challenge-web.onrender.com"]
+ALLOWED_HOSTS = ["fullstack-coding-challenge-web.onrender.com'"]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
