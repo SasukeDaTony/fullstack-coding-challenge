@@ -39,7 +39,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "fullstack-coding-challenge-web.onrender.com",  # Production domain
     "localhost",
-    "127.0.0.1",  # For local development
+    "*",
     "[::1]",  # IPv6 localhost
 ]
 
