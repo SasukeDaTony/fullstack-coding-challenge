@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
+
 import dj_database_url
 import os
 
@@ -21,12 +22,32 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "#m8p(q=10bq+kl#!huob(2$w4gp#&b&hv3d=$%ma+c)8+4syo%"
+# SECRET_KEY = "#m8p(q=10bq+kl#!huob(2$w4gp#&b&hv3d=$%ma+c)8+4syo%"
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.getenv("DJANGO_DEVELOPMENT") is not None
+
+# Configure Secret Key
+SECRET_KEY = os.getenv(
+    "DJANGO_SECRET_KEY", "#m8p(q=10bq+kl#!huob(2$w4gp#&b&hv3d=$%ma+c)8+4syo%"
+)
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["fullstack-coding-challenge-web.onrender.com"]
+ALLOWED_HOSTS = [
+    "fullstack-coding-challenge-web.onrender.com",  # Production domain
+    "localhost",
+    "127.0.0.1",  # For local development
+    "[::1]",  # IPv6 localhost
+]
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(
+    BASE_DIR, "staticfiles"
+)  # Directory where static files will be collected
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -80,18 +101,21 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    },
-    "default": dj_database_url.parse(
-        "postgres://djg_db_user:fSoGIRbAW1nbrrucjWu5yWazZRsj5XI3@dpg-cocp3e21hbls73cvcs1g-a.oregon-postgres.render.com/djg_db",
-        conn_max_age=600,
-        conn_health_checks=True,
-    ),
-}
-
+if os.getenv("DJANGO_DEVELOPMENT") is not None:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
+else:
+    DATABASES = {
+        "default": dj_database_url.parse(
+            "postgres://djg_db_user:fSoGIRbAW1nbrrucjWu5yWazZRsj5XI3@dpg-cocp3e21hbls73cvcs1g-a.oregon-postgres.render.com/djg_db",
+            conn_max_age=600,
+            ssl_require=True,  # Enable SSL if your database supports it
+        )
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
