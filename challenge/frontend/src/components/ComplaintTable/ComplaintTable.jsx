@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./ComplaintTable.css";
 import { complaintIcons } from "../../utils/utils";
+
+
 export default function ComplaintTable({
   allComplaints,
   constituentComplaints,
