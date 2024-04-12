@@ -15,8 +15,13 @@ class Command(BaseCommand):
             data = json.load(json_file)
             for cm in data:
                 names = cm["name"].replace(", Sr.", "").lower().split(" ")
+                username = names[0][0] + names[-1]  # Generates username
+                if User.objects.filter(username=username).exists():
+                    print(f"User with username {username} already exists. Skipping...")
+                    continue  # Skip the creation of this user
+                # If user does not exist, create new user
                 u = User.objects.create_user(
-                    names[0][0] + names[-1],
+                    username=username,
                     first_name=names[0].capitalize(),
                     last_name=names[-1].capitalize(),
                     password="{}-{}".format(names[-1], cm["district"]),
