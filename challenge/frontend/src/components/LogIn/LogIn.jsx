@@ -17,10 +17,13 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:8000/login/", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://fullstack-coding-challenge-web.onrender.com/login/",
+        {
+          username,
+          password,
+        }
+      );
       Cookies.set("token", response.data.token, { expires: 1 }); // set Token
       setLoginError("");
       navigate("/profile"); // Redirect user upon successful login

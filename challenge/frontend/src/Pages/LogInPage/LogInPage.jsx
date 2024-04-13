@@ -16,7 +16,7 @@ export default function LogInPage() {
   const fetchAllUsers = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/complaints/allUsers"
+        "https://fullstack-coding-challenge-web.onrender.com/api/complaints/allUsers"
       );
       setAllUsers(response.data);
     } catch (error) {

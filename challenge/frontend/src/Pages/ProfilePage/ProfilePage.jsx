@@ -34,10 +34,10 @@ function Profile() {
   const fetchClosedCases = async (token) => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/complaints/closedCases/",
+        "https://fullstack-coding-challenge-web.onrender.com/api/complaints/closedCases/",
         {
           headers: {
-            Authorization: `Token ${token}`, 
+            Authorization: `Token ${token}`,
           },
         }
       );
@@ -51,10 +51,10 @@ function Profile() {
   const fetchTopComplaints = async (token) => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/complaints/topComplaints/",
+        "https://fullstack-coding-challenge-web.onrender.com/complaints/topComplaints/",
         {
           headers: {
-            Authorization: `Token ${token}`, 
+            Authorization: `Token ${token}`,
           },
         }
       );
@@ -69,10 +69,10 @@ function Profile() {
   const fetchAllComplaints = async (token) => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/complaints/allComplaints/",
+        "https://fullstack-coding-challenge-web.onrender.com/complaints/allComplaints/",
         {
           headers: {
-            Authorization: `Token ${token}`, 
+            Authorization: `Token ${token}`,
           },
         }
       );
@@ -86,7 +86,7 @@ function Profile() {
   const fetchProfileData = async (token) => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/complaints/userProfile/",
+        "https://fullstack-coding-challenge-web.onrender.com/api/complaints/userProfile/",
         {
           headers: {
             Authorization: `Token ${token}`,
@@ -103,7 +103,7 @@ function Profile() {
   const fetchConstituentComplaints = async (token) => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/complaints/constituentComplaints/",
+        "https://fullstack-coding-challenge-web.onrender.com/api/complaints/constituentComplaints/",
         {
           headers: {
             Authorization: `Token ${token}`,
@@ -120,7 +120,7 @@ function Profile() {
   const fetchOpenCases = async (token) => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/complaints/openCases/",
+        "https://fullstack-coding-challenge-web.onrender.com/api/complaints/openCases/",
         {
           headers: {
             Authorization: `Token ${token}`,

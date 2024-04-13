@@ -16,7 +16,7 @@ function DistrictMembersPage() {
   const fetchAllUsers = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/complaints/allUsers"
+        "https://fullstack-coding-challenge-web.onrender.com/api/complaints/allUsers"
       );
       setAllUsers(response.data); // Assuming the data is the object you want
     } catch (error) {
