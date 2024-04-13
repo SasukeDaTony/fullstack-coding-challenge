@@ -69,7 +69,7 @@ function Profile() {
   const fetchAllComplaints = async (token) => {
     try {
       const response = await axios.get(
-        "https://fullstack-coding-challenge-web.onrender.com/complaints/allComplaints/",
+        "https://fullstack-coding-challenge-web.onrender.com/api/complaints/allComplaints/",
         {
           headers: {
             Authorization: `Token ${token}`,
